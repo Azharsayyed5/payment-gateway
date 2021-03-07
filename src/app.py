@@ -15,7 +15,7 @@ app = Flask(__name__, template_folder="templates/", static_folder='static/')
 
 # Set up the SQLAlchemy Database to be a local file 'desserts.database'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///payment.db'
-app.config['SECRET_KEY'] = '11eb94390242ac130002'
+app.config['SECRET_KEY'] = '<SECRET_KEY>'
 
 
 # Set SQLALCHEMY_TRACK_MODIFICATIONS to False
