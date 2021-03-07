@@ -1,0 +1,54 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payment page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css" />
+    </head>
+    <body class="bg-gray-300">
+        <div class="bg-gray-300">
+            <div class="py-12">
+                <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg md:max-w-xl mx-2">
+                    <div class="md:flex ">
+                        <div class="w-full p-4 px-5 py-5">
+                            <div class="flex flex-row">
+                                <h2 class="text-3xl font-semibold">Azhar</h2>
+                                <h2 class="text-3xl text-green-400 font-semibold">Sayyed</h2>
+                            </div>
+                            <div class="flex flex-row pt-2 text-xs pt-6 pb-5"> 
+                                <span class="font-bold">Information</span>
+                                 <small class="text-gray-400 ml-1">></small> 
+                                 <span class="text-gray-400 ml-1">Donate</span> 
+                                 <small class="text-gray-400 ml-1">></small> 
+                                <span class="text-gray-400 ml-1">Payment</span>
+                            </div> 
+                        <form method="post" action="{{ url }}">
+                            <span>Donate Amount</span>
+                            <div class="relative pb-5"> 
+                                <input type="text" name="Amount" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="Amount"> 
+                            </div> 
+                            <span>Personal Information</span>
+                            <div class="grid md:grid-cols-2 md:gap-2"> 
+                                <input type="text" name="mail" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="First name*"> 
+                                <input type="text" name="mail" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="Last name*"> 
+                            </div> 
+                            <input type="text" name="mail" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="E-mail"> 
+                            <input type="text" name="mail" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="Country*"> 
+                            <input type="text" name="mail" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="Phone Number*">
+                            
+                            {% for key, value in data.items() %}
+                                <input readonly type="hidden" name="{{ key }}" value="{{ value }}">
+                            {% endfor %}
+                            
+                            <div class="flex justify-between items-center pt-2"> 
+                                <button type="button" class="h-12 w-24 text-blue-500 text-xs font-medium">Return to home</button> 
+                                <button type="submit" class="h-12 w-48 rounded font-medium text-xs bg-blue-500 text-white">Pay with PayTM</button> 
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
